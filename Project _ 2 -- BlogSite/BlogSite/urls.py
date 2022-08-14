@@ -8,7 +8,8 @@ urlpatterns = [
 	    path('admin/', admin.site.urls),
 	    path('',include('blogPosts.urls')),
 	    path('',include('users.urls')),
-		path('accounts/', include('allauth.urls')),
+		path('',include('exam.urls')),
+		path('', include('social_django.urls', namespace='social')),
 	    path('password-reset/',auth_views.PasswordResetView.as_view(template_name=
 	    								'users/password_reset.html'),name='password_reset'),
 
