@@ -1,0 +1,32 @@
+{% extends 'teacher/teacherbase.html' %}
+{% block content %}
+{% load static %}
+{% load widget_tweaks %}
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+</head>
+
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+  {%csrf_token%}
+  <div class="form-group">
+
+
+    <label for="question_link">Student Answer Link is: {{vivaResult.answer_link}}</label>
+    <br>
+      <br>
+      
+    <label for="answer_link">Please enter the marks here</label>
+    {% render_field vivaForm.marks|attr:'required:true' class="form-control" placeholder="Example: 10" %}
+      <br>
+  </div>
+  
+
+  <button type="submit" class="btn btn-success" style="border-radius: 0%;">Submit Viva Evaluation</button>
+</form>
+
+<br><br><br><br><br><br>
+{% endblock content %}
